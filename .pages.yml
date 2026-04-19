@@ -78,7 +78,7 @@ content:
                 type: string
 
   - name: services
-    label: Services (JSON only — not Markdown)
+    label: Services
     type: collection
     path: content/services
     format: json
@@ -99,7 +99,7 @@ content:
         type: image
 
   - name: testimonials
-    label: Testimonials (JSON only — not Markdown)
+    label: Testimonials
     type: collection
     path: content/testimonials
     format: json
