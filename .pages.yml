@@ -99,12 +99,17 @@ content:
         type: image
 
   - name: testimonials
-    label: Testimonials
+    label: Testimonials (JSON only — not Markdown)
     type: collection
     path: content/testimonials
     format: json
+    filename: "{primary}.json"
+    exclude:
+      - "*.md"
     view:
-      primary: name
+      primary: id
+      sort: name
+      order: asc
     fields:
       - name: id
         type: string
