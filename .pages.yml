@@ -1,0 +1,142 @@
+# Pages CMS — https://pagescms.org
+# Install the Pages CMS GitHub app on this repo, then edit content in the UI.
+
+media:
+  input: public/media
+  output: /media
+
+content:
+  - name: site
+    label: Site
+    type: group
+    items:
+      - name: home
+        label: Home
+        type: file
+        path: content/home.json
+        format: json
+        fields:
+          - name: hero
+            label: Hero
+            type: object
+            fields:
+              - name: headline
+                type: string
+              - name: subheadline
+                type: text
+              - name: image
+                type: image
+              - name: ctaLabel
+                type: string
+              - name: ctaPhone
+                type: string
+          - name: intro
+            type: text
+      - name: doctor
+        label: Doctor
+        type: file
+        path: content/doctor.json
+        format: json
+        fields:
+          - name: name
+            type: string
+          - name: degree
+            type: string
+          - name: bio
+            type: text
+          - name: image
+            type: image
+      - name: clinic
+        label: Clinic & SEO
+        type: file
+        path: content/clinic.json
+        format: json
+        fields:
+          - name: siteName
+            type: string
+          - name: tagline
+            type: text
+          - name: address
+            type: text
+          - name: phone
+            type: string
+          - name: whatsapp
+            type: string
+          - name: facebookUrl
+            type: string
+          - name: instagramUrl
+            type: string
+          - name: mapEmbedUrl
+            type: string
+          - name: hours
+            label: Opening hours
+            type: object
+            list: true
+            fields:
+              - name: day
+                type: string
+              - name: hours
+                label: Times
+                type: string
+
+  - name: services
+    label: Services
+    type: collection
+    path: content/services
+    format: json
+    view:
+      primary: title
+      sort: title
+      order: asc
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: title
+        type: string
+      - name: description
+        type: text
+      - name: image
+        type: image
+
+  - name: testimonials
+    label: Testimonials
+    type: collection
+    path: content/testimonials
+    format: json
+    view:
+      primary: name
+    fields:
+      - name: id
+        type: string
+        required: true
+      - name: name
+        type: string
+      - name: text
+        type: text
+      - name: image
+        type: image
+
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: content/blog
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: slug
+      sort: date
+      order: desc
+    fields:
+      - name: slug
+        type: string
+        required: true
+        pattern: "^[a-z0-9-]+$"
+      - name: title
+        type: string
+      - name: date
+        type: date
+      - name: description
+        type: text
+      - name: body
+        type: rich-text

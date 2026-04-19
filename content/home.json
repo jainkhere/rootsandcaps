@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "headline": "Healthy smiles, gentle care",
+    "subheadline": "Family and cosmetic dentistry focused on comfort, clarity, and lasting results.",
+    "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80",
+    "ctaLabel": "Call now",
+    "ctaPhone": "+15555550100"
+  },
+  "intro": "This site is wired for Git-based content: edit JSON and blog posts in the repo (or via Pages CMS) and redeploy to GitHub Pages."
+}
