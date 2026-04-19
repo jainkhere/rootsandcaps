@@ -1,6 +1,6 @@
 {
   "id": "test-title",
   "title": "Test title",
-  "description": "Example service. The site only loads `*.json` in this folder—create services in Pages CMS (collection format: JSON) or add a new `.json` file here.",
-  "image": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&q=80"
+  "description": "Example service. This is just a placeholder description",
+  "image": "/media/photo-1629909613654-28e377c37b09-3.jpeg"
 }
