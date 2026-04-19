@@ -153,14 +153,20 @@ export default function HomePage() {
                   key={t.id}
                   className="flex min-h-[220px] flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900"
                 >
-                  <div className="relative mx-auto h-14 w-14 shrink-0 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={resolveContentSrc(t.image)}
-                      alt=""
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  </div>
+                  {resolveContentSrc(t.image) ? (
+                    <div className="relative mx-auto h-14 w-14 shrink-0 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={resolveContentSrc(t.image)}
+                        alt=""
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="mx-auto flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-slate-200 text-sm font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      {t.name.charAt(0)}
+                    </div>
+                  )}
                   <blockquote className="mt-3 flex-1 text-center text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                     “{t.text}”
                   </blockquote>
