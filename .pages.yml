@@ -28,8 +28,6 @@ content:
                 type: image
               - name: ctaLabel
                 type: string
-              - name: ctaPhone
-                type: string
           - name: intro
             type: text
       - name: doctor

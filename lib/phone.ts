@@ -1,10 +1,4 @@
-import type { ClinicContent, HomeContent } from "./types";
-
-/** Prefer hero CTA phone when set; otherwise clinic listing phone (single place to edit if you only use clinic.json). */
-export function callPhoneNumber(home: HomeContent, clinic: ClinicContent): string {
-  return (home.hero.ctaPhone?.trim() || clinic.phone).trim();
-}
-
+/** `tel:` link for a human-entered phone string (spaces stripped). */
 export function telHref(phone: string): string {
   return `tel:${phone.replace(/\s/g, "")}`;
 }

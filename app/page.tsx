@@ -9,7 +9,7 @@ import {
   getServices,
   getTestimonials,
 } from "@/lib/content";
-import { callPhoneNumber, telHref } from "@/lib/phone";
+import { telHref } from "@/lib/phone";
 import { resolveContentSrc } from "@/lib/urls";
 
 export default function HomePage() {
@@ -18,8 +18,7 @@ export default function HomePage() {
   const clinic = getClinic();
   const services = getServices();
   const testimonials = getTestimonials();
-  const callPhone = callPhoneNumber(home, clinic);
-  const phoneHref = telHref(callPhone);
+  const phoneHref = telHref(clinic.phone);
   const whatsappDigits = clinic.whatsapp.replace(/\D/g, "");
 
   return (
@@ -173,7 +172,7 @@ export default function HomePage() {
                   href={phoneHref}
                   className="mt-4 inline-flex rounded-full bg-blue-800 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-900"
                 >
-                  Call {callPhone}
+                  Call {clinic.phone}
                 </a>
               </div>
               <div className="rounded-xl border border-slate-200 p-5">
