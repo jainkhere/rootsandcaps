@@ -11,15 +11,15 @@ export function SiteHeader() {
           {clinic.siteName}
         </Link>
         <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-700">
-          <a href="/#services" className="hover:text-blue-800">
+          <Link href="/#services" className="hover:text-blue-800">
             Services
-          </a>
-          <a href="/#about" className="hover:text-blue-800">
+          </Link>
+          <Link href="/#about" className="hover:text-blue-800">
             About
-          </a>
-          <a href="/#contact" className="hover:text-blue-800">
+          </Link>
+          <Link href="/#contact" className="hover:text-blue-800">
             Contact
-          </a>
+          </Link>
           <Link href="/blog" className="hover:text-blue-800">
             Blog
           </Link>
