@@ -6,10 +6,19 @@
   "whatsapp": "+18573096680",
   "facebookUrl": "https://www.facebook.com/",
   "instagramUrl": "https://www.instagram.com/",
-  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.184133389887!2d-73.98811768459398!3d40.75889597932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1234567890",
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.7045225789107!2d75.77871809999999!3d26.8493488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5001de3f2c5%3A0x4e65b2f5b20a8225!2sRoots%20%26%20caps%20dental%20care!5e0!3m2!1sen!2sus!4v1776576697523!5m2!1sen!2sus",
   "hours": [
-    { "day": "Monday – Thursday", "hours": "8:00 a.m. – 5:00 p.m." },
-    { "day": "Friday", "hours": "8:00 a.m. – 2:00 p.m." },
-    { "day": "Saturday – Sunday", "hours": "Closed" }
+    {
+      "day": "Monday – Thursday",
+      "hours": "8:00 a.m. – 5:00 p.m."
+    },
+    {
+      "day": "Friday",
+      "hours": "8:00 a.m. – 2:00 p.m."
+    },
+    {
+      "day": "Saturday – Sunday",
+      "hours": "Closed"
+    }
   ]
 }
