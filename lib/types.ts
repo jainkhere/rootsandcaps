@@ -4,7 +4,8 @@ export type HomeContent = {
     subheadline: string;
     image: string;
     ctaLabel: string;
-    ctaPhone: string;
+    /** Optional; when empty, `clinic.json` `phone` is used for all Call links. */
+    ctaPhone?: string;
   };
   intro: string;
 };

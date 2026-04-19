@@ -1,8 +1,11 @@
-import { getClinic } from "@/lib/content";
+import { getClinic, getHome } from "@/lib/content";
+import { callPhoneNumber } from "@/lib/phone";
 import { siteOrigin } from "@/lib/site";
 
 export function LocalBusinessJsonLd() {
   const c = getClinic();
+  const home = getHome();
+  const phone = callPhoneNumber(home, c);
   const base = siteOrigin();
   const url = `${base.endsWith("/") ? base : `${base}/`}`;
 
@@ -12,7 +15,7 @@ export function LocalBusinessJsonLd() {
     name: c.siteName,
     description: c.tagline,
     url,
-    telephone: c.phone,
+    telephone: phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: c.address.replace(/\n/g, ", "),

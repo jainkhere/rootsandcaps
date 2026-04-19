@@ -80,10 +80,11 @@ content:
                 type: string
 
   - name: services
-    label: Services
+    label: Services (JSON only — not Markdown)
     type: collection
     path: content/services
     format: json
+    filename: "{primary}.json"
     view:
       primary: title
       sort: title

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,6 +9,8 @@ import {
   getServices,
   getTestimonials,
 } from "@/lib/content";
+import { callPhoneNumber, telHref } from "@/lib/phone";
+import { resolveContentSrc } from "@/lib/urls";
 
 export default function HomePage() {
   const home = getHome();
@@ -17,7 +18,8 @@ export default function HomePage() {
   const clinic = getClinic();
   const services = getServices();
   const testimonials = getTestimonials();
-  const phoneHref = `tel:${clinic.phone.replace(/\s/g, "")}`;
+  const callPhone = callPhoneNumber(home, clinic);
+  const phoneHref = telHref(callPhone);
   const whatsappDigits = clinic.whatsapp.replace(/\D/g, "");
 
   return (
@@ -41,13 +43,12 @@ export default function HomePage() {
               </a>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-              <Image
-                src={home.hero.image}
+              {/* eslint-disable-next-line @next/next/no-img-element -- CMS URLs may be any host; basePath applied in resolveContentSrc */}
+              <img
+                src={resolveContentSrc(home.hero.image)}
                 alt=""
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
+                className="absolute inset-0 h-full w-full object-cover"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -70,12 +71,11 @@ export default function HomePage() {
                   className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50/50"
                 >
                   <div className="relative aspect-video bg-slate-200">
-                    <Image
-                      src={s.image}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={resolveContentSrc(s.image)}
                       alt=""
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, 33vw"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
                   <div className="p-4">
@@ -99,12 +99,11 @@ export default function HomePage() {
         <section id="about" className="scroll-mt-20 border-y border-slate-100 bg-slate-50 py-16">
           <div className="mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-2 md:items-center">
             <div className="relative aspect-square max-w-sm overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <Image
-                src={doctor.image}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={resolveContentSrc(doctor.image)}
                 alt={doctor.name}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 400px"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div>
@@ -134,12 +133,11 @@ export default function HomePage() {
                   className="min-w-[260px] max-w-xs shrink-0 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
                   <div className="relative mx-auto h-14 w-14 overflow-hidden rounded-full bg-slate-200">
-                    <Image
-                      src={t.image}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={resolveContentSrc(t.image)}
                       alt=""
-                      fill
-                      className="object-cover"
-                      sizes="56px"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   </div>
                   <blockquote className="mt-3 text-sm text-slate-700">
@@ -175,7 +173,7 @@ export default function HomePage() {
                   href={phoneHref}
                   className="mt-4 inline-flex rounded-full bg-blue-800 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-900"
                 >
-                  Call {clinic.phone}
+                  Call {callPhone}
                 </a>
               </div>
               <div className="rounded-xl border border-slate-200 p-5">

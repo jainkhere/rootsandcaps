@@ -38,10 +38,10 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: out
-          # v4+ excludes dotfiles by default; keep .nojekyll from static export
+          # Keep `out/.nojekyll` (v5 tar excludes dotfiles unless true)
           include-hidden-files: true
 
   deploy:
@@ -53,4 +53,4 @@ jobs:
     steps:
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
