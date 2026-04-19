@@ -194,7 +194,6 @@ export default function HomePage() {
                   {clinic.address}
                 </p>
                 <SocialLinks
-                  facebookUrl={clinic.facebookUrl}
                   instagramUrl={clinic.instagramUrl}
                 />
                 <a

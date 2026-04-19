@@ -132,7 +132,6 @@ A modern, fast, SEO-optimized dental clinic website that showcases services, bui
 
 #### Panel 1: Clinic Info
 - Address
-- Facebook link
 - Instagram link
 - Call CTA
 

@@ -17,7 +17,7 @@ export function LocalBusinessJsonLd() {
       "@type": "PostalAddress",
       streetAddress: c.address.replace(/\n/g, ", "),
     },
-    sameAs: [c.facebookUrl, c.instagramUrl].filter(Boolean),
+    sameAs: [c.instagramUrl].filter(Boolean),
   };
 
   return (

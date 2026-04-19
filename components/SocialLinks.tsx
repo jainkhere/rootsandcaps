@@ -1,20 +1,6 @@
 type Props = {
-  facebookUrl: string;
   instagramUrl: string;
 };
-
-function FacebookIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M24 12.073C24 5.446 18.627 0 12 0S0 5.446 0 12.073c0 5.988 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    </svg>
-  );
-}
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -32,18 +18,9 @@ function InstagramIcon({ className }: { className?: string }) {
 const iconBase =
   "tap-highlight inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition duration-150 hover:scale-105 hover:shadow-md active:scale-95 motion-reduce:hover:scale-100 motion-reduce:active:scale-100 dark:border-slate-700 dark:bg-slate-900";
 
-export function SocialLinks({ facebookUrl, instagramUrl }: Props) {
+export function SocialLinks({ instagramUrl }: Props) {
   return (
     <div className="mt-4 flex items-center gap-3">
-      <a
-        href={facebookUrl}
-        className={`${iconBase} text-[#1877F2]`}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook"
-      >
-        <FacebookIcon className="h-5 w-5" />
-      </a>
       <a
         href={instagramUrl}
         className={`${iconBase} text-[#E4405F]`}

@@ -21,7 +21,6 @@ export type ClinicContent = {
   address: string;
   phone: string;
   whatsapp: string;
-  facebookUrl: string;
   instagramUrl: string;
   mapEmbedUrl: string;
   hours: { day: string; hours: string }[];

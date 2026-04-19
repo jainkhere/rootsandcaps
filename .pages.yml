@@ -60,8 +60,6 @@ content:
             type: string
           - name: whatsapp
             type: string
-          - name: facebookUrl
-            type: string
           - name: instagramUrl
             type: string
           - name: mapEmbedUrl
