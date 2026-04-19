@@ -7,6 +7,26 @@
   --color-secondary: #2d8a5e;
 }
 
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
-  @apply bg-white text-slate-900 antialiased;
+  @apply bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+}
+
+@layer utilities {
+  .tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

@@ -38,15 +38,15 @@ export default async function BlogPostPage({ params }: Props) {
       <article className="mx-auto max-w-3xl px-4 py-12">
         <Link
           href="/blog"
-          className="text-sm font-medium text-blue-800 hover:underline"
+          className="text-sm font-medium text-blue-800 hover:underline dark:text-sky-300"
         >
           ← Back to blog
         </Link>
-        <p className="mt-6 text-sm text-slate-500">{post.frontmatter.date}</p>
-        <h1 className="mt-2 text-3xl font-bold text-slate-900">
+        <p className="mt-6 text-sm text-slate-500 dark:text-slate-400">{post.frontmatter.date}</p>
+        <h1 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
           {post.frontmatter.title}
         </h1>
-        <div className="prose prose-slate mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-800">
+        <div className="prose prose-slate mt-8 max-w-none prose-headings:font-semibold prose-a:text-blue-800 dark:prose-invert dark:prose-a:text-sky-300">
           <ReactMarkdown>{post.body}</ReactMarkdown>
         </div>
       </article>

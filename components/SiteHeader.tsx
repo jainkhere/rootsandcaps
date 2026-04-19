@@ -1,30 +1,15 @@
-import Link from "next/link";
 import { getClinic } from "@/lib/content";
+import { SiteHeaderNav } from "@/components/SiteHeaderNav";
 
 export function SiteHeader() {
   const clinic = getClinic();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-        <Link href="/" className="text-lg font-semibold text-slate-900">
-          {clinic.siteName}
-        </Link>
-        <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-700">
-          <Link href="/#services" className="hover:text-blue-800">
-            Services
-          </Link>
-          <Link href="/#about" className="hover:text-blue-800">
-            About
-          </Link>
-          <Link href="/#contact" className="hover:text-blue-800">
-            Contact
-          </Link>
-          <Link href="/blog" className="hover:text-blue-800">
-            Blog
-          </Link>
-        </nav>
-      </div>
+    <header
+      id="site-header"
+      className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur transition-colors duration-300 supports-[backdrop-filter]:bg-white/90 dark:border-slate-800 dark:bg-slate-950/90 dark:supports-[backdrop-filter]:bg-slate-950/75"
+    >
+      <SiteHeaderNav siteName={clinic.siteName} />
     </header>
   );
 }
