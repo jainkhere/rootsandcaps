@@ -74,12 +74,20 @@ export default function HomePage() {
                   key={s.id}
                   className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50/50 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900/80"
                 >
-                  <div className="relative aspect-video bg-slate-200 dark:bg-slate-800">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-800">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={resolveContentSrc(s.image)}
                       alt=""
-                      className="absolute inset-0 h-full w-full object-cover"
+                      aria-hidden="true"
+                      className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-xl saturate-125"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-white/45 dark:from-slate-950/30 dark:via-slate-950/5 dark:to-slate-950/45" />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={resolveContentSrc(s.image)}
+                      alt=""
+                      className="absolute inset-0 h-full w-full object-contain p-2"
                     />
                   </div>
                   <div className="p-4">
