@@ -36,7 +36,9 @@ export function getServices(): ServiceItem[] {
     .readdirSync(dir)
     .filter((f: string) => f.endsWith(".json"))
     .map((f: string) => readJson<ServiceItem>(path.join("services", f)))
-    .sort((a: ServiceItem, b: ServiceItem) => a.title.localeCompare(b.title));
+    .sort((a: ServiceItem, b: ServiceItem) =>
+      a.id.localeCompare(b.id, undefined, { numeric: true })
+    );
 }
 
 export function getTestimonials(): TestimonialItem[] {
