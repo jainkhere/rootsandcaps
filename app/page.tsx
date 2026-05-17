@@ -68,13 +68,6 @@ export default function HomePage() {
             <h2 className="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">
               Our services
             </h2>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
-              Editable in the CMS under{" "}
-              <code className="rounded bg-slate-100 px-1 py-0.5 text-xs dark:bg-slate-800 sm:text-sm">
-                content/services
-              </code>
-              .
-            </p>
             <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
               {services.map((s) => (
                 <article
