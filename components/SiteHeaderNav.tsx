@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 
 type Props = { siteName: string };
 
-/** Works with `basePath` (e.g. `/rootsandcaps`) and without it (`/`). */
+/** Works with an optional deployment base path and at the domain root. */
 function isHomePath(pathname: string): boolean {
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length === 0) return true;

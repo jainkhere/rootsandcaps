@@ -1,6 +1,6 @@
 /**
- * Prefix repo basePath for same-origin paths stored in content (e.g. `/media/...`
- * from Pages CMS). Absolute http(s) URLs are returned unchanged.
+ * Prefix an optional deployment base path for same-origin content URLs.
+ * Absolute http(s) URLs are returned unchanged.
  */
 export function resolveContentSrc(src?: string | null): string {
   if (!src) return "";
