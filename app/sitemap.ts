@@ -1,18 +1,10 @@
 import type { MetadataRoute } from "next";
-import { getBlogPosts } from "@/lib/content";
 import { siteOrigin } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const origin = siteOrigin();
-
-  const posts = getBlogPosts().map((p) => ({
-    url: `${origin}/blog/${p.slug}`,
-    lastModified: new Date(p.frontmatter.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
 
   return [
     {
@@ -25,6 +17,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    ...posts,
   ];
 }
