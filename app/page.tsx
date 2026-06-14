@@ -69,35 +69,41 @@ export default function HomePage() {
               Our services
             </h2>
             <div className="mt-8 grid grid-cols-1 gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-              {services.map((s) => (
-                <article
-                  key={s.id}
-                  className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50/50 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900/80"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-800">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={resolveContentSrc(s.image)}
-                      alt=""
-                      aria-hidden="true"
-                      className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-xl saturate-125"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-white/45 dark:from-slate-950/30 dark:via-slate-950/5 dark:to-slate-950/45" />
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={resolveContentSrc(s.image)}
-                      alt=""
-                      className="absolute inset-0 h-full w-full object-contain p-2"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-slate-900 dark:text-white">{s.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                      {s.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
+              {services.map((s) => {
+                const imageSrc = resolveContentSrc(s.image);
+
+                return (
+                  <article
+                    key={s.id}
+                    className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50/50 transition-colors duration-300 dark:border-slate-800 dark:bg-slate-900/80"
+                  >
+                    {imageSrc && (
+                      <div className="relative aspect-[4/3] overflow-hidden bg-slate-100 dark:bg-slate-800">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={imageSrc}
+                          alt=""
+                          aria-hidden="true"
+                          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 blur-xl saturate-125"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-white/10 to-white/45 dark:from-slate-950/30 dark:via-slate-950/5 dark:to-slate-950/45" />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={imageSrc}
+                          alt=""
+                          className="absolute inset-0 h-full w-full object-contain p-2"
+                        />
+                      </div>
+                    )}
+                    <div className="p-4">
+                      <h3 className="font-semibold text-slate-900 dark:text-white">{s.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                        {s.description}
+                      </p>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
             <div className="mt-8 flex justify-center sm:mt-10">
               <a href={phoneHref} className={`${btnPrimary} px-6 py-3`}>
